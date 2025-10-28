@@ -1,0 +1,121 @@
+/* TODO: Style the OpenAI landing page clone */
+/* Follow the dark theme with blue gradients as shown in the screenshot */
+
+/* Base Styles */
+* {
+  /* TODO: Add base styles */
+}
+
+body {
+  /* TODO: Add body styles - black background, white text */
+}
+
+/* Header Styles */
+.header {
+  /* TODO: Style the header with logo and login button */
+}
+
+.nav {
+  /* TODO: Navigation bar styles */
+}
+
+.logo {
+  /* TODO: Logo styles */
+}
+
+.login-btn {
+  /* TODO: Login button with border */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  /* TODO: Fixed sidebar on the left with navigation links */
+}
+
+.sidebar-nav {
+  /* TODO: Sidebar navigation styles */
+}
+
+.sidebar-link {
+  /* TODO: Individual link styles */
+}
+
+/* Hero Section */
+.hero {
+  /* TODO: Hero section with blue gradient background */
+}
+
+.hero-gradient {
+  /* TODO: Blue gradient background effect */
+}
+
+.hero-content {
+  /* TODO: Centered hero content */
+}
+
+.hero-title {
+  /* TODO: Large title styles */
+}
+
+.hero-description {
+  /* TODO: Description styles */
+}
+
+.hero-buttons {
+  /* TODO: Button container */
+}
+
+.btn {
+  /* TODO: Base button styles */
+}
+
+.btn-primary {
+  /* TODO: Primary button (white background) */
+}
+
+.btn-secondary {
+  /* TODO: Secondary button (border only) */
+}
+
+/* Featured Section */
+.featured {
+  /* TODO: Featured content section */
+}
+
+.featured-grid {
+  /* TODO: Grid layout for featured cards */
+}
+
+.featured-card {
+  /* TODO: Card styles */
+}
+
+.card-icon {
+  /* TODO: Icon styles */
+}
+
+/* Sections */
+.section {
+  /* TODO: Generic section styles */
+}
+
+.section-title {
+  /* TODO: Section title styles */
+}
+
+/* Footer */
+.footer {
+  /* TODO: Footer styles */
+}
+
+.footer-content {
+  /* TODO: Footer content grid */
+}
+
+.footer-col {
+  /* TODO: Footer column styles */
+}
+
+.footer-bottom {
+  /* TODO: Footer bottom styles */
+}
