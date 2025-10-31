@@ -1,119 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenAI - Your AI Research Company</title>
-  <link rel="stylesheet" href="styles.solution.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The OpenAI Foundation - Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <nav class="nav">
-      <div class="logo">
-        <span>OpenAI</span>
-      </div>
-      <button class="login-btn">Log in</button>
-    </nav>
-  </header>
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <nav class="sidebar-nav">
-      <a href="#" class="sidebar-link">Research</a>
-      <a href="#" class="sidebar-link">Safety</a>
-      <a href="#" class="sidebar-link">For developers</a>
-      <a href="#" class="sidebar-link">ChatGPT</a>
-      <a href="#" class="sidebar-link">Blog</a>
-      <a href="#" class="sidebar-link">About</a>
-      <a href="#" class="sidebar-link">Careers</a>
-      <a href="#" class="sidebar-link">Contact</a>
-    </nav>
-  </aside>
-
-  <!-- Main Content -->
-  <main class="main-content">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-gradient"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">The OpenAI Foundation</h1>
-        <p class="hero-description">One of the leading non-profit artificial intelligence research companies in the world.</p>
-        <div class="hero-buttons">
-          <button class="btn btn-primary">Watch livestream</button>
-          <button class="btn btn-secondary">Learn more</button>
+    <header class="header">
+        <button class="menu-toggle-btn">☰</button> 
+        <div class="logo">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="30" height="30" rx="4" fill="white"/>
+            </svg>
+            <span>OpenAI</span>
         </div>
-      </div>
-    </section>
+        <button class="btn btn-login">Log in</button>
+    </header>
 
-    <!-- Featured Content -->
-    <section class="featured">
-      <div class="featured-grid">
-        <div class="featured-card large">
-          <div class="card-icon">📤</div>
-          <h3>Introducing ChatGPT Atlas, the browser with ChatGPT built in</h3>
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="#research">Research</a></li>
+                <li class="nav-item"><a href="#safety">Safety</a></li>
+                <li class="nav-item"><a href="#developers">For developers</a></li>
+                <li class="nav-item"><a href="#chatgpt">ChatGPT</a></li>
+                <li class="nav-item"><a href="#blog">Blog</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li class="nav-item"><a href="#careers">Careers</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content-wrapper">
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">The OpenAI Foundation</h1>
+                    <p class="hero-description">
+                        We're building safe AGI, and ensuring that all of humanity benefits. Join us in shaping the future of artificial general intelligence responsibly.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" id="watch-livestream">Watch livestream</button>
+                        <button class="btn btn-secondary" id="learn-more">Learn more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-section" id="featured">
+            <div class="featured-grid-main">
+                <article class="feature-card large">
+                    <div class="card-image-large">
+                        <div class="icon-placeholder"><i class="fas fa-paper-plane"></i></div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Introducing ChatGPT Atlas, the browser with ChatGPT built in</h3>
+                    </div>
+                </article>
+                
+                <div class="small-cards-right">
+                    <article class="feature-card small">
+                        <div class="card-image-small">
+                            <div class="icon-placeholder"><i class="fas fa-robot"></i></div>
+                        </div>
+                        <div class="card-info">
+                            <h3>OpenAI DevDay 2025</h3>
+                            <p class="metadata">The Biggest OpenAI Event World Wide</p>
+                        </div>
+                    </article>
+                    <article class="feature-card small">
+                        <div class="card-image-small">
+                            <div class="icon-placeholder"><i class="fas fa-lock"></i></div>
+                        </div>
+                        <div class="card-info">
+                            <h3>Work smarter with your company knowledge in ChatGPT</h3>
+                            <p class="metadata"> Sora v3.0 update</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <section class="research-section" id="research">
+            <h2 class="section-title">Research</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-thumbnail" style="background: linear-gradient(135deg, #2a5298, #1e3c72);"></div>
+                    <div class="news-info">
+                        <h3>Sparse Autoencoders</h3>
+                        <p class="metadata">Apr 29, 2025 · Research</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-thumbnail" style="background: linear-gradient(135deg, #764ba2, #a86cbf);"></div>
+                    <div class="news-info">
+                        <h3>Scaling Laws for AI Models</h3>
+                        <p class="metadata">Mar 15, 2025 · Research</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-thumbnail" style="background: linear-gradient(135deg, #d33c5e, #ff8c00);"></div>
+                    <div class="news-info">
+                        <h3>Aligning Superintelligence</h3>
+                        <p class="metadata">Jan 01, 2025 · Safety</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="news-section" id="blog">
+            <h2 class="section-title">Latest News</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-thumbnail large-image-placeholder" style="background-image: url('public/researchh.png');"></div>
+                    <div class="news-info">
+                        <h3>Our New Alignment Research Team</h3>
+                        <p class="metadata">Oct 30, 2025 · Blog</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-thumbnail large-image-placeholder" style="background-image: url('public/devdayy.jpg');"></div>
+                    <div class="news-info">
+                        <h3>Updates from DevDay 2025</h3>
+                        <p class="metadata">Oct 25, 2025 · Events</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-thumbnail large-image-placeholder" style="background-image: url('public/sam-altman.jpg');"></div>
+                    <div class="news-info">
+                        <h3>Sam Altman on the Future of AGI</h3>
+                        <p class="metadata">Oct 20, 2025 · Perspective</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="developers-section" id="developers">
+            <h2 class="section-title">For Developers</h2>
+            <div class="news-grid dev-grid">
+                <article class="news-card dev-card">
+                    <div class="dev-placeholder" style="background-color: #f7f7e8;"></div>
+                    <div class="news-info">
+                        <h3>New API Pricing Structure</h3>
+                        <p class="metadata">Oct 10, 2025 · API</p>
+                    </div>
+                </article>
+                <article class="news-card dev-card">
+                    <div class="dev-placeholder" style="background-color: #ffffff;"></div>
+                    <div class="news-info">
+                        <h3>Function Calling Guide</h3>
+                        <p class="metadata">Sep 28, 2025 · Documentation</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="partners-section">
+            <h2 class="section-title">OpenAI Partners</h2>
+            <div class="partner-grid">
+                <div class="partner-logo">
+                    <img src="https://placehold.co/300x150/111111/ffffff?text=Doppel" alt="Doppel Logo">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://placehold.co/300x150/111111/ffffff?text=Intercom" alt="Intercom Logo">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://placehold.co/300x150/111111/ffffff?text=CodeVerse" alt="CodeVerse Logo">
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2 class="section-title">Get started with ChatGPT</h2>
+                <button class="btn btn-primary btn-lg">Start Building</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#">ChatGPT</a></li>
+                    <li><a href="#">DALL·E 3</a></li>
+                    <li><a href="#">API</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>OpenAI</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="featured-card">
-          <div class="card-icon">👻</div>
-          <h3>OpenAI DevDay [2025]</h3>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OpenAI. All rights reserved.</p>
         </div>
-        <div class="featured-card">
-          <div class="card-icon">🔗</div>
-          <h3>Work smarter with your company knowledge in ChatGPT</h3>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- Latest News -->
-    <section class="section">
-      <h2 class="section-title">Latest news</h2>
-      <div class="news-grid">
-        <article class="news-card">
-          <div class="news-thumbnail"></div>
-          <h3>The next chapter of the Microsoft-OpenAI partnership</h3>
-          <p class="news-meta">Company · Oct 26, 2023</p>
-        </article>
-        <article class="news-card">
-          <div class="news-thumbnail"></div>
-          <h3>Strengthening ChatGPT responses in sensitive conversations</h3>
-          <p class="news-meta">Safety · Oct 24, 2023</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- More sections... -->
-    <section class="section">
-      <h2 class="section-title">Get started with ChatGPT</h2>
-      <button class="btn btn-download">Download</button>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="#">Research Overview</a>
-        <a href="#">About</a>
-        <a href="#">Careers</a>
-        <a href="#">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>ChatGPT</h4>
-        <a href="#">Pricing</a>
-        <a href="#">API</a>
-      </div>
-      <div class="footer-col">
-        <h4>For business</h4>
-        <a href="#">Sales</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>OpenAI © 2023</p>
-      <a href="#">Terms & Privacy</a>
-    </div>
-  </footer>
-
-  <script src="script.solution.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
