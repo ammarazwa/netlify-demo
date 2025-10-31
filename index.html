@@ -1,143 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open AI Clone Challenge</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenAI - Your AI Research Company</title>
+  <link rel="stylesheet" href="styles.solution.css">
 </head>
 <body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">
+        <span>OpenAI</span>
+      </div>
+      <button class="login-btn">Log in</button>
+    </nav>
+  </header>
 
-    <header class="header">
-        <div class="logo">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="30" height="30" rx="4" fill="white"/>
-            </svg>
-            <span>OpenAI</span>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-link">Research</a>
+      <a href="#" class="sidebar-link">Safety</a>
+      <a href="#" class="sidebar-link">For developers</a>
+      <a href="#" class="sidebar-link">ChatGPT</a>
+      <a href="#" class="sidebar-link">Blog</a>
+      <a href="#" class="sidebar-link">About</a>
+      <a href="#" class="sidebar-link">Careers</a>
+      <a href="#" class="sidebar-link">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-gradient"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">The OpenAI Foundation</h1>
+        <p class="hero-description">One of the leading non-profit artificial intelligence research companies in the world.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">Watch livestream</button>
+          <button class="btn btn-secondary">Learn more</button>
         </div>
-        <button class="btn btn-login">Log in</button>
-    </header>
+      </div>
+    </section>
 
-    <aside class="sidebar">
-        <nav>
-            <ul>
-                <li class="nav-item"><a href="#research">Research</a></li>
-                <li class="nav-item"><a href="#safety">Safety</a></li>
-                <li class="nav-item"><a href="#developers">For developers</a></li>
-                <li class="nav-item"><a href="#chatgpt">ChatGPT</a></li>
-                <li class="nav-item"><a href="#blog">Blog</a></li>
-                <li class="nav-item"><a href="#about">About</a></li>
-                <li class="nav-item"><a href="#careers">Careers</a></li>
-                <li class="nav-item"><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </aside>
-
-    <main class="content-wrapper">
-        <section class="hero-section" id="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">The OpenAI Foundation</h1>
-                <p class="hero-description">
-                    We're building safe AGI, and ensuring that all of humanity benefits. Join us in shaping the future of artificial general intelligence responsibly.
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" id="watch-livestream">Watch livestream</button>
-                    <button class="btn btn-secondary" id="learn-more">Learn more</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="featured-section" id="featured">
-            <h2 class="section-title">Featured Content</h2>
-            <div class="card-grid">
-                <article class="feature-card" data-card-id="chat">
-                    <div class="card-icon"><i class="fas fa-comment-dots"></i></div>
-                    <h3>ChatGPT: The Future of Conversation</h3>
-                    <p>Experience the next generation of conversational AI. Seamlessly integrated for efficiency.</p>
-                </article>
-                <article class="feature-card" data-card-id="devday">
-                    <div class="card-icon"><i class="fas fa-code"></i></div>
-                    <h3>OpenAI DevDay Recap</h3>
-                    <p>All the announcements, new models, and tools for developers from our annual event.</p>
-                </article>
-                <article class="feature-card" data-card-id="knowledge">
-                    <div class="card-icon"><i class="fas fa-brain"></i></div>
-                    <h3>Expanding Company Knowledge Access</h3>
-                    <p>New features allow integration of proprietary data with our leading models securely.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="news">
-            <h2 class="section-title">Latest News</h2>
-            <div class="news-grid">
-                <article class="news-card" data-card-id="news1">
-                    <div class="news-thumbnail"></div>
-                    <div class="news-info">
-                        <h3>Model Update: GPT-4 Turbo with Vision</h3>
-                        <p class="metadata">Oct 30, 2025 · 5 min read</p>
-                    </div>
-                </article>
-                <article class="news-card" data-card-id="news2">
-                    <div class="news-thumbnail"></div>
-                    <div class="news-info">
-                        <h3>Safety Protocol v3.0 Release</h3>
-                        <p class="metadata">Oct 25, 2025 · Safety</p>
-                    </div>
-                </article>
-                <article class="news-card" data-card-id="news3">
-                    <div class="news-thumbnail"></div>
-                    <div class="news-info">
-                        <h3>Careers: We're Hiring Research Scientists</h3>
-                        <p class="metadata">Oct 15, 2025 · Careers</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-columns">
-            <div class="footer-col">
-                <h4>Products</h4>
-                <ul>
-                    <li><a href="#">ChatGPT</a></li>
-                    <li><a href="#">DALL·E 3</a></li>
-                    <li><a href="#">API</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>OpenAI</h4>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Security</a></li>
-                </ul>
-            </div>
-            <div class="footer-col footer-social">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
+    <!-- Featured Content -->
+    <section class="featured">
+      <div class="featured-grid">
+        <div class="featured-card large">
+          <div class="card-icon">📤</div>
+          <h3>Introducing ChatGPT Atlas, the browser with ChatGPT built in</h3>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 OpenAI. All rights reserved.</p>
+        <div class="featured-card">
+          <div class="card-icon">👻</div>
+          <h3>OpenAI DevDay [2025]</h3>
         </div>
-    </footer>
+        <div class="featured-card">
+          <div class="card-icon">🔗</div>
+          <h3>Work smarter with your company knowledge in ChatGPT</h3>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Latest News -->
+    <section class="section">
+      <h2 class="section-title">Latest news</h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-thumbnail"></div>
+          <h3>The next chapter of the Microsoft-OpenAI partnership</h3>
+          <p class="news-meta">Company · Oct 26, 2023</p>
+        </article>
+        <article class="news-card">
+          <div class="news-thumbnail"></div>
+          <h3>Strengthening ChatGPT responses in sensitive conversations</h3>
+          <p class="news-meta">Safety · Oct 24, 2023</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- More sections... -->
+    <section class="section">
+      <h2 class="section-title">Get started with ChatGPT</h2>
+      <button class="btn btn-download">Download</button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">Research Overview</a>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>ChatGPT</h4>
+        <a href="#">Pricing</a>
+        <a href="#">API</a>
+      </div>
+      <div class="footer-col">
+        <h4>For business</h4>
+        <a href="#">Sales</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>OpenAI © 2023</p>
+      <a href="#">Terms & Privacy</a>
+    </div>
+  </footer>
+
+  <script src="script.solution.js"></script>
 </body>
 </html>

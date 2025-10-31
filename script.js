@@ -1,78 +1,67 @@
-/*
- * OpenAI Landing Page Clone - Animation Script
- * * Requirements:
- * 1. Sidebar menu toggle functionality
- * 2. Button hover animations (handled via class manipulation)
- * 3. Smooth transitions (CSS-driven)
- * 4. Smooth scroll behavior (added as per TODO hint)
- */
-
 document.addEventListener('DOMContentLoaded', function() {
-    // === 1. Sidebar Menu Toggle (Assuming a toggle button exists in HTML) ===
-    
-    // Asumsi: Anda menambahkan tombol toggle di header (contoh: <button id="menu-toggle">)
-    const menuToggleButton = document.getElementById('menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
-    const contentWrapper = document.querySelector('.content-wrapper');
-
-    if (menuToggleButton && sidebar && contentWrapper) {
-        menuToggleButton.addEventListener('click', function() {
-            // Toggle class 'sidebar-open' pada body atau elemen yang mengontrol tampilan
-            // Saya akan menggunakan class di body untuk kontrol CSS global yang lebih mudah
-            document.body.classList.toggle('sidebar-open');
-        });
-        
-        // Bonus: Sembunyikan sidebar setelah link diklik (di mobile)
-        sidebar.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (document.body.classList.contains('sidebar-open')) {
-                    document.body.classList.remove('sidebar-open');
-                }
-            });
-        });
-    } else {
-         // Jika tombol toggle tidak ada, kita bisa mengabaikan fungsionalitas ini
-         // atau log pesan jika Anda ingin melacaknya.
-         // console.warn("Sidebar toggle elements not found. Skipping toggle setup.");
-    }
-    
-    // Catatan: Transisi dan posisi 'sidebar-open' harus didefinisikan di styles.css
-
-    // === 2. Implement Button Hover Animations ===
-    
-    const buttons = document.querySelectorAll('.btn');
-
-    buttons.forEach(button => {
-        // Class 'btn-hover-effect' sudah ditambahkan di HTML/CSS sebelumnya,
-        // tapi kita bisa secara eksplisit menggunakan JS untuk menambahkannya/mengubahnya
-        // jika kita ingin logika yang lebih kompleks.
-        
-        // Untuk quiz ini, kita hanya memastikan bahwa transisi sudah diaktifkan di CSS.
-        
-        button.addEventListener('mouseenter', function() {
-            this.classList.add('is-hovering');
-        });
-
-        button.addEventListener('mouseleave', function() {
-            this.classList.remove('is-hovering');
-        });
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  
+  sidebarLinks.forEach(link => {
+    link.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateX(5px)';
+      this.style.transition = 'all 0.3s ease';
     });
     
-    // Tambahkan class CSS:
-    // .btn.is-hovering { transform: translateY(-2px); box-shadow: ... }
-
-    // === 3. Tambahkan Smooth Scroll Behavior ===
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            // Hanya aktifkan smooth scroll untuk link yang menuju ke ID
-            if (this.getAttribute('href') !== '#') {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
+    link.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateX(0)';
+    });
+  });
+  
+  const buttons = document.querySelectorAll('.btn');
+  
+  buttons.forEach(button => {
+    button.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-2px) scale(1.02)';
+      this.style.transition = 'all 0.3s ease';
+      
+      if (this.classList.contains('btn-primary')) {
+        this.style.boxShadow = '0 8px 24px rgba(255, 255, 255, 0.3)';
+      }
     });
     
+    button.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+      this.style.boxShadow = '';
+    });
+  });
+  
+  const cards = document.querySelectorAll('.featured-card, .news-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-4px) scale(1.01)';
+      this.style.transition = 'all 0.3s ease';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+  
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+  
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+    });
+  }
+  
 });
