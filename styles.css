@@ -1,121 +1,433 @@
-/* TODO: Style the OpenAI landing page clone */
-/* Follow the dark theme with blue gradients as shown in the screenshot */
+/* Global Reset and Typography */
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-accent-start: #667eea;
+    --color-accent-end: #764ba2;
+    --color-gray-dark: #333333;
+    --color-gray-medium: #888888;
+    --gradient-hero: linear-gradient(135deg, var(--color-accent-start), var(--color-accent-end));
+    --transition-speed: 0.3s ease;
+}
 
-/* Base Styles */
 * {
-  /* TODO: Add base styles */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  /* TODO: Add body styles - black background, white text */
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    line-height: 1.6;
+    display: flex; 
+    min-height: 100vh;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
 }
 
-/* Header Styles */
+a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+/* --- 1. Header (Top Bar) --- */
 .header {
-  /* TODO: Style the header with logo and login button */
-}
-
-.nav {
-  /* TODO: Navigation bar styles */
+    position: fixed;
+    top: 0;
+    left: 150px; /* Di luar sidebar */
+    width: calc(100% - 150px);
+    height: 70px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9); 
+    z-index: 10;
+    border-bottom: 1px solid var(--color-gray-dark);
+    /* Transisi untuk menyesuaikan dengan sidebar mobile */
+    transition: left var(--transition-speed), width var(--transition-speed); 
 }
 
 .logo {
-  /* TODO: Logo styles */
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
-.login-btn {
-  /* TODO: Login button with border */
+.logo svg {
+    margin-right: 10px;
 }
 
-/* Sidebar Styles */
+#menu-toggle {
+    display: none; /* Sembunyikan secara default di desktop */
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 60;
+}
+
+
+/* --- 2. Sidebar (Left Navigation) --- */
 .sidebar {
-  /* TODO: Fixed sidebar on the left with navigation links */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    background-color: var(--color-black);
+    padding-top: 70px; 
+    border-right: 1px solid var(--color-gray-dark);
+    z-index: 20;
+    /* Transisi untuk animasi toggle */
+    transition: transform var(--transition-speed); 
 }
 
-.sidebar-nav {
-  /* TODO: Sidebar navigation styles */
+.sidebar nav ul {
+    list-style: none;
+    padding: 20px 0;
 }
 
-.sidebar-link {
-  /* TODO: Individual link styles */
+.nav-item a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), color var(--transition-speed);
+    border-left: 3px solid transparent;
 }
 
-/* Hero Section */
-.hero {
-  /* TODO: Hero section with blue gradient background */
+/* Sidebar Link Hover Effect */
+.nav-item a:hover {
+    background-color: var(--color-gray-dark);
+    color: var(--color-accent-start);
+    transform: translateX(5px);
+    border-left: 3px solid var(--color-accent-start);
 }
 
-.hero-gradient {
-  /* TODO: Blue gradient background effect */
+/* --- Main Content Layout --- */
+.content-wrapper {
+    margin-left: 150px; 
+    flex-grow: 1;
+    /* Transisi untuk penyesuaian konten saat sidebar mobile terbuka */
+    transition: margin-left var(--transition-speed); 
 }
 
-.hero-content {
-  /* TODO: Centered hero content */
-}
-
-.hero-title {
-  /* TODO: Large title styles */
-}
-
-.hero-description {
-  /* TODO: Description styles */
-}
-
-.hero-buttons {
-  /* TODO: Button container */
-}
-
-.btn {
-  /* TODO: Base button styles */
-}
-
-.btn-primary {
-  /* TODO: Primary button (white background) */
-}
-
-.btn-secondary {
-  /* TODO: Secondary button (border only) */
-}
-
-/* Featured Section */
-.featured {
-  /* TODO: Featured content section */
-}
-
-.featured-grid {
-  /* TODO: Grid layout for featured cards */
-}
-
-.featured-card {
-  /* TODO: Card styles */
-}
-
-.card-icon {
-  /* TODO: Icon styles */
-}
-
-/* Sections */
-.section {
-  /* TODO: Generic section styles */
+section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section-title {
-  /* TODO: Section title styles */
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-/* Footer */
+/* --- Buttons --- */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.btn-login {
+    background: transparent;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+}
+
+/* Button Primary (Watch livestream) */
+.btn-primary {
+    background: var(--gradient-hero);
+    color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+}
+
+/* Button Secondary (Learn more) */
+.btn-secondary {
+    background: transparent;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    margin-left: 20px;
+}
+
+/* Button Hover Effects (Menggunakan class JS 'is-hovering') */
+.btn.is-hovering {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary.is-hovering {
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* --- 3. Hero Section --- */
+.hero-section {
+    background: var(--gradient-hero);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 70px; 
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+/* --- 4. Featured Content --- */
+.featured-section {
+    padding-top: 100px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--color-gray-dark);
+    padding: 30px;
+    border-radius: 12px;
+    transition: all var(--transition-speed);
+    cursor: pointer;
+}
+
+/* Card Hover Effect */
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(102, 126, 234, 0.5); /* Lift and Shadow/Glow */
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--color-accent-start);
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--color-gray-medium);
+}
+
+/* --- 5. Latest News Section --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    background-color: var(--color-black);
+    border-radius: 12px;
+    border: 1px solid var(--color-gray-dark);
+    transition: border-color var(--transition-speed), transform var(--transition-speed);
+    cursor: pointer;
+}
+
+/* News Card Hover Effect */
+.news-card:hover {
+    border-color: var(--color-accent-start);
+    transform: scale(1.02);
+}
+
+.news-thumbnail {
+    height: 180px;
+    background-color: var(--color-gray-dark); /* Placeholder for image */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.news-info {
+    padding: 20px;
+}
+
+.news-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.metadata {
+    font-size: 0.9rem;
+    color: var(--color-gray-medium);
+}
+
+/* --- 6. Footer --- */
 .footer {
-  /* TODO: Footer styles */
+    background-color: var(--color-black);
+    padding: 60px 40px 20px;
+    border-top: 1px solid var(--color-gray-dark);
 }
 
-.footer-content {
-  /* TODO: Footer content grid */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    flex-wrap: wrap;
 }
 
 .footer-col {
-  /* TODO: Footer column styles */
+    width: 200px; 
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--color-gray-medium);
+}
+
+.social-icons a:hover {
+    color: var(--color-accent-start);
 }
 
 .footer-bottom {
-  /* TODO: Footer bottom styles */
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-gray-dark);
+}
+
+.footer-bottom p {
+    color: var(--color-gray-medium);
+    font-size: 0.9rem;
+}
+
+/* ========================================= */
+/* --- Responsive Design & Sidebar Toggle --- */
+/* ========================================= */
+@media (max-width: 900px) {
+    
+    /* Tampilkan tombol toggle di header */
+    #menu-toggle {
+        display: block; 
+    }
+
+    /* Penyesuaian Header (menjadi full width) */
+    .header {
+        left: 0;
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    /* Sembunyikan sidebar secara default (geser ke kiri) */
+    .sidebar {
+        transform: translateX(-100%); 
+        width: 250px; /* Lebar sidebar di mobile */
+        z-index: 50; 
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Konten utama mulai dari kiri (tanpa margin sidebar) */
+    .content-wrapper {
+        margin-left: 0;
+    }
+
+    /* Ketika class 'sidebar-open' ditambahkan ke body (oleh JS) */
+    body.sidebar-open .sidebar {
+        transform: translateX(0); /* Tampilkan sidebar */
+    }
+    
+    /* Menggeser konten saat sidebar terbuka (opsional, tapi disarankan) */
+    /* body.sidebar-open .content-wrapper {
+        margin-left: 250px;
+    } */
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .footer-columns {
+        justify-content: flex-start;
+    }
+
+    .footer-col {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-secondary {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
 }
